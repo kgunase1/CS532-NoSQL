@@ -6,8 +6,8 @@ client = MongoClient('mongodb://localhost:27017/')
 db = client['local']
 collection = db['Spotify_Youtube']
 
-# Specify the given track for which we want to find similar tracks
-given_track = "Feel Good Inc."
+# Get the track name from the user
+given_track = raw_input("Enter the name of the track for which you want to find similar tracks: ")
 
 # Use the $lookup operator to join the Spotify and YouTube data based on artist and track name
 pipeline = [

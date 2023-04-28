@@ -53,22 +53,11 @@ views = [result["avg_views"] for result in results]
 likes = [result["avg_likes"] for result in results]
 comments = [result["avg_comments"] for result in results]
 
-# # Create a bar chart using matplotlib
-# plt.bar(labels, views)
-
-# # Add axis labels and a title to the chart
-# plt.xlabel("Licensed / Official Video")
-# plt.ylabel("Average Views")
-# plt.title("Average Views by Video Attributes")
-
-# # Display the chart
-# plt.show()
-
-# Plot the results
+# Create a multi-line chart using matplotlib
 fig, ax = plt.subplots(figsize=(10, 6))
-ax.bar(labels, views, color="b", label="Average Views")
-ax.bar(labels, likes, color="g", label="Average Likes")
-ax.bar(labels, comments, color="r", label="Average Comments")
+ax.plot(labels, views, label="Average Views")
+ax.plot(labels, likes, label="Average Likes")
+ax.plot(labels, comments, label="Average Comments")
 ax.set_title("Relationship between Video Attributes and Popularity")
 ax.set_xlabel("Licensed - Official Video")
 ax.set_ylabel("Average Value")
